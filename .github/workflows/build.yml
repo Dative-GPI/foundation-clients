@@ -1,0 +1,24 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        folder: [Foundation.Clients, Foundation.SourceClients]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK 5.0.x
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 5.0.x
+      - name: Install dependencies
+        run: |
+          cd ${{matrix.folder}}
+          dotnet restore
+      - name: Build
+        run: |
+          cd ${{matrix.folder}}
+          dotnet build --configuration Release --no-restore
