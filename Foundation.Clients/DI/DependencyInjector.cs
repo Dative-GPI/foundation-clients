@@ -1,4 +1,3 @@
-using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,8 +14,6 @@ namespace Foundation.Clients.DI
     {
         public static IServiceCollection AddFoundationClients(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddAutoMapper(typeof(DependencyInjector).Assembly);
-
             services.AddTransient<IFoundationClient, FoundationClient>();
 
             services.AddTransient<IAdminFoundationClient, AdminFoundationClient>();
