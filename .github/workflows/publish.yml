@@ -21,7 +21,8 @@ jobs:
         run: |
           cd ${{matrix.folder}}
           export VERSION=${{ github.ref_name }}
-          nuget pack -Build -IncludeReferencedProjects -p Configuration=Release
+          dotnet build --configuration Release
+          nuget pack -IncludeReferencedProjects -p Configuration=Release
 
       # Publishing with tag name as version
       - name: Publishing to NuGet 🚀
