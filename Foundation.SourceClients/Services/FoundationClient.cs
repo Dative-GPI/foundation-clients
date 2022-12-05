@@ -9,14 +9,17 @@ namespace Foundation.SourceClients.Services
     {
         public HttpClient SourceClient { get; }
         public IFoundationAccountClient Account { get; }
+        public IFoundationSourceClient Sources { get; set; }
 
         public FoundationClient(
             HttpClient sourceClient,
-            IFoundationAccountClient foundationAccountClient
+            IFoundationAccountClient foundationAccountClient,
+            IFoundationSourceClient foundationSourceClient
         )
         {
             SourceClient = sourceClient;
             Account = foundationAccountClient;
+            Sources = foundationSourceClient;
         }
 
         public void Init(string uri, string languageCode, string jwt = null)
@@ -34,6 +37,7 @@ namespace Foundation.SourceClients.Services
             }
 
             Account.Init(this);
+            Sources.Init(this);
         }
     }
 }

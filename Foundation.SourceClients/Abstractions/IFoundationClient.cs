@@ -6,5 +6,6 @@ namespace Foundation.SourceClients.Abstractions
     {
         void Init(string uri, string languageCode = null, string jwt = null);
         IFoundationAccountClient Account { get; }
+        IFoundationSourceClient Sources { get; set; }
     }
 }

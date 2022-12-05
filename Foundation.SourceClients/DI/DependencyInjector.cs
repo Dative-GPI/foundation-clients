@@ -11,6 +11,7 @@ namespace Foundation.SourceClients.DI
         {
             services.AddTransient<IFoundationClient, FoundationClient>();
             services.AddTransient<IFoundationAccountClient, FoundationAccountClient>();
+            services.AddTransient<IFoundationSourceClient, FoundationSourceClient>();
 
             return services;
         }
