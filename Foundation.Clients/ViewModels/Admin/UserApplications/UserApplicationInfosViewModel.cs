@@ -16,8 +16,8 @@ namespace Foundation.Clients.ViewModels.Admin
         public Guid? RoleAdminId { get; set; }
         public string RoleAdminLabel { get; set; }
         public Guid? ImageId { get; set; }
-        public int ImageWidth { get; set; }
-        public int ImageHeight { get; set; }
+        public int? ImageWidth { get; set; }
+        public int? ImageHeight { get; set; }
         public string ImageBlurHash { get; set; }
     }
 }
