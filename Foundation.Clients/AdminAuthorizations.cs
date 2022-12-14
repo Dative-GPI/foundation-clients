@@ -15,14 +15,6 @@ namespace Foundation.Clients
         public const string ADMIN_APPLICATION_DETAILS = "admin.application.details";
         #endregion
 
-        #region Charts
-        public const string ADMIN_CHART_INFOS = "admin.chart.infos";
-        public const string ADMIN_CHART_DETAILS = "admin.chart.details";
-        public const string ADMIN_CHART_CREATE = "admin.chart.create";
-        public const string ADMIN_CHART_UPDATE = "admin.chart.update";
-        public const string ADMIN_CHART_REMOVE = "admin.chart.remove";
-        #endregion
-
         #region Columnorganisationtype
         public const string ADMIN_COLUMNORGANISATIONTYPE_INFOS = "admin.columnorganisationtype.infos";
         public const string ADMIN_COLUMNORGANISATIONTYPE_DETAILS = "admin.columnorganisationtype.details";
@@ -42,14 +34,6 @@ namespace Foundation.Clients
         public const string ADMIN_TABLE_PATCH = "admin.tables.patch";
         public const string ADMIN_TABLE_UPDATE = "admin.tables.update";
 
-        #endregion
-
-        #region Dashboard
-        public const string ADMIN_DASHBOARD_INFOS = "admin.dashboard.infos";
-        public const string ADMIN_DASHBOARD_DETAILS = "admin.dashboard.details";
-        public const string ADMIN_DASHBOARD_CREATE = "admin.dashboard.create";
-        public const string ADMIN_DASHBOARD_UPDATE = "admin.dashboard.update";
-        public const string ADMIN_DASHBOARD_REMOVE = "admin.dashboard.remove";
         #endregion
 
         #region Datadefinition
@@ -236,6 +220,19 @@ namespace Foundation.Clients
         public const string ADMIN_ROUTES_INFOS = "admin.routes.infos";
         #endregion
 
+        #region Routine
+        public const string ADMIN_ROUTINE_INFOS = "admin.routine.infos";
+        public const string ADMIN_ROUTINE_DETAILS = "admin.routine.details";
+        public const string ADMIN_ROUTINE_CREATE = "admin.routine.create";
+        public const string ADMIN_ROUTINE_UPDATE = "admin.routine.update";
+        public const string ADMIN_ROUTINE_REMOVE = "admin.routine.remove";
+        #endregion
+
+        #region RoutineExecution
+        public const string ADMIN_ROUTINE_EXECUTION_INFOS = "admin.routine-execution.infos";
+        public const string ADMIN_ROUTINE_EXECUTION_DETAILS = "admin.routine-execution.details";
+        #endregion
+
         #region SecuritySettings
         public const string ADMIN_SECURITYSETTINGS_DETAILS = "admin.security-settings.details";
         public const string ADMIN_SECURITYSETTINGS_UPDATE = "admin.security-settings.update";
@@ -279,22 +276,6 @@ namespace Foundation.Clients
         public const string ADMIN_USERORGANISATION_CREATE = "admin.userorganisation.create";
         public const string ADMIN_USERORGANISATION_UPDATE = "admin.userorganisation.update";
         public const string ADMIN_USERORGANISATION_REMOVE = "admin.userorganisation.remove";
-        #endregion
-
-        #region Widget
-        public const string ADMIN_WIDGET_INFOS = "admin.widget.infos";
-        public const string ADMIN_WIDGET_DETAILS = "admin.widget.details";
-        public const string ADMIN_WIDGET_CREATE = "admin.widget.create";
-        public const string ADMIN_WIDGET_UPDATE = "admin.widget.update";
-        public const string ADMIN_WIDGET_REMOVE = "admin.widget.remove";
-        #endregion
-
-        #region Widgettemplate
-        public const string ADMIN_WIDGETTEMPLATE_INFOS = "admin.widgettemplate.infos";
-        public const string ADMIN_WIDGETTEMPLATE_DETAILS = "admin.widgettemplate.details";
-        public const string ADMIN_WIDGETTEMPLATE_CREATE = "admin.widgettemplate.create";
-        public const string ADMIN_WIDGETTEMPLATE_UPDATE = "admin.widgettemplate.update";
-        public const string ADMIN_WIDGETTEMPLATE_REMOVE = "admin.widgettemplate.remove";
         #endregion
     }
 }
