@@ -25,4 +25,9 @@ namespace Foundation.Clients.Services
         public const string ACCOUNTS_PATH = "/api/v1/accounts";
         public const string TRANSLATIONS_PATH = "/api/v1/translations";
     }
+
+    public static class DispatcherFoundationRoutes
+    {
+        public const string ROUTINES_PATH = "api/dispatcher/v1/routines";
+    }
 }

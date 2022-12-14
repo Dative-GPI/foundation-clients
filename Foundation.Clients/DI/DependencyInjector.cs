@@ -7,6 +7,7 @@ using Foundation.Clients.Abstractions.Gateway;
 
 using Foundation.Clients.Services;
 using Foundation.Clients.Abstractions.Admin;
+using Foundation.Clients.Abstractions.Dispatcher;
 
 namespace Foundation.Clients.DI
 {
@@ -19,6 +20,7 @@ namespace Foundation.Clients.DI
             services.AddTransient<IAdminFoundationClient, AdminFoundationClient>();
             services.AddTransient<IShellFoundationClient, ShellFoundationClient>();
             services.AddTransient<IGatewayFoundationClient, GatewayFoundationClient>();
+            services.AddTransient<IDispatcherFoundationClient, DispatcherFoundationClient>();
 
             services.AddTransient<IShellModelFoundationClient, ShellModelFoundationClient>();
             services.AddTransient<IShellDeviceFoundationClient, ShellDeviceFoundationClient>();
@@ -37,6 +39,8 @@ namespace Foundation.Clients.DI
             services.AddTransient<IAdminSourceFoundationClient, AdminSourceFoundationClient>();
             services.AddTransient<IAdminRoutineFoundationClient, AdminRoutineFoundationClient>();
             services.AddTransient<IAdminRoutineExecutionFoundationClient, AdminRoutineExecutionFoundationClient>();
+
+            services.AddTransient<IDispatcherRoutineFoundationClient, DispatcherRoutineFoundationClient>();
 
             return services;
         }
