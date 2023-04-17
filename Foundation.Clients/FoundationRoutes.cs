@@ -11,6 +11,7 @@ namespace Foundation.Clients.Services
 
     public static class AdminFoundationRoutes
     {
+        public const string DEVICE_PATH = "/api/admin/v1/devices";
         public const string DEVICE_TWIN_PATH = "/api/admin/v1/device-twins";
         public const string DEVICE_ORGANISATION_PATH = "/api/admin/v1/device-organisations";
         public const string DEVICE_SOURCES_PATH = "/api/admin/v1/device-sources";
