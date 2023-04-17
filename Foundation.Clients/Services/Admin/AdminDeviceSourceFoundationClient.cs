@@ -25,7 +25,7 @@ namespace Foundation.Clients.Services
             _root = (FoundationClient)root;
         }
 
-        public async Task<IEnumerable<DeviceSourceViewModel>> GetMany(DeviceSourceFilter filter)
+        public async Task<IEnumerable<DeviceSourceViewModel>> GetMany(DeviceSourcesFilterViewModel filter)
         {
             Url url = DEVICE_SOURCES_PATH.SetQueryParams(filter);
 
