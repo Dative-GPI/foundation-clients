@@ -39,5 +39,14 @@ namespace Foundation.Clients.Services
 
             return organisations;
         }
+
+        public async Task<DeviceOrganisationInfosViewModel> Create(CreateDeviceOrganisationViewModel payload)
+        {
+            var response = await _client.PostAsJsonAsync(DEVICE_ORGANISATION_PATH, payload);
+
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadFromJsonAsync<DeviceOrganisationInfosViewModel>();
+        }
     }
 }

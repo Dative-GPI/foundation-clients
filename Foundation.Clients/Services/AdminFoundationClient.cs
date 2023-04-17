@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 using Foundation.Clients.Abstractions;
 using Foundation.Clients.Abstractions.Admin;
 
@@ -9,31 +6,38 @@ namespace Foundation.Clients.Services
     public class AdminFoundationClient : IAdminFoundationClient
     {
         private IFoundationClient _root;
+
+        public IAdminDeviceFoundationClient Devices { get; }
         public IAdminDeviceTwinFoundationClient DeviceTwin { get; }
         public IAdminDeviceOrganisationFoundationClient DeviceOrganisations { get; }
+        public IAdminDeviceSourceFoundationClient DeviceSources { get; }
         public IAdminUserApplicationFoundationClient UserApplications { get; }
-        public IAdminPermissionFoundationClient AdminPermissions { get; }
+        public IAdminPermissionFoundationClient Permissions { get; }
         public IAdminSourceFoundationClient Sources { get; }
         public IAdminRoutineFoundationClient Routines { get; }
         public IAdminRoutineExecutionFoundationClient RoutineExecutions { get; }
 
         public AdminFoundationClient(
-            IAdminDeviceTwinFoundationClient deviceTwin,
+            IAdminDeviceFoundationClient device,
             IAdminDeviceOrganisationFoundationClient deviceOrganisation,
-            IAdminUserApplicationFoundationClient userApplication,
-            IAdminPermissionFoundationClient adminPermissions,
-            IAdminSourceFoundationClient sources,
+            IAdminDeviceSourceFoundationClient deviceSource,
+            IAdminDeviceTwinFoundationClient deviceTwin,
+            IAdminPermissionFoundationClient permission,
             IAdminRoutineFoundationClient routines,
-            IAdminRoutineExecutionFoundationClient routineExecutions
+            IAdminRoutineExecutionFoundationClient routineExecutions,
+            IAdminSourceFoundationClient sources,
+            IAdminUserApplicationFoundationClient userApplication
         )
         {
-            DeviceTwin = deviceTwin;
+            Devices = device;
             DeviceOrganisations = deviceOrganisation;
-            UserApplications = userApplication;
-            AdminPermissions = adminPermissions;
-            Sources = sources;
+            DeviceSources = deviceSource;
+            DeviceTwin = deviceTwin;
+            Permissions = permission;
             Routines = routines;
             RoutineExecutions = routineExecutions;
+            Sources = sources;
+            UserApplications = userApplication;
         }
 
 
@@ -41,13 +45,15 @@ namespace Foundation.Clients.Services
         {
             this._root = root;
 
-            DeviceTwin.Init(root);
+            Devices.Init(root);
             DeviceOrganisations.Init(root);
-            UserApplications.Init(root);
-            AdminPermissions.Init(root);
-            Sources.Init(root);
+            DeviceSources.Init(root);
+            DeviceTwin.Init(root);
+            Permissions.Init(root);
             Routines.Init(root);
             RoutineExecutions.Init(root);
+            Sources.Init(root);
+            UserApplications.Init(root);
         }
     }
 }

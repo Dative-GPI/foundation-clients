@@ -1,5 +1,7 @@
-using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+
 using Foundation.Clients.ViewModels.Admin;
 
 namespace Foundation.Clients.Abstractions.Admin
@@ -8,5 +10,6 @@ namespace Foundation.Clients.Abstractions.Admin
     {
         void Init(IFoundationClient root);
         Task<IEnumerable<DeviceOrganisationInfosViewModel>> GetMany(DeviceOrganisationsFilter filter);
+        Task<DeviceOrganisationInfosViewModel> Create(CreateDeviceOrganisationViewModel payload);
     }
 }

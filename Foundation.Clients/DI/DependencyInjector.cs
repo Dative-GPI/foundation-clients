@@ -32,13 +32,15 @@ namespace Foundation.Clients.DI
             services.AddTransient<IGatewayAccountFoundationClient, GatewayAccountFoundationClient>();
             services.AddTransient<IGatewayTranslationFoundationClient, GatewayTranslationFoundationClient>();
 
-            services.AddTransient<IAdminDeviceTwinFoundationClient, AdminDeviceTwinFoundationClient>();
+            services.AddTransient<IAdminDeviceFoundationClient, AdminDeviceFoundationClient>();
             services.AddTransient<IAdminDeviceOrganisationFoundationClient, AdminDeviceOrganisationFoundationClient>();
-            services.AddTransient<IAdminUserApplicationFoundationClient, AdminUserApplicationFoundationClient>();
+            services.AddTransient<IAdminDeviceSourceFoundationClient, AdminDeviceSourceFoundationClient>();
+            services.AddTransient<IAdminDeviceTwinFoundationClient, AdminDeviceTwinFoundationClient>();
             services.AddTransient<IAdminPermissionFoundationClient, AdminPermissionFoundationClient>();
-            services.AddTransient<IAdminSourceFoundationClient, AdminSourceFoundationClient>();
             services.AddTransient<IAdminRoutineFoundationClient, AdminRoutineFoundationClient>();
             services.AddTransient<IAdminRoutineExecutionFoundationClient, AdminRoutineExecutionFoundationClient>();
+            services.AddTransient<IAdminSourceFoundationClient, AdminSourceFoundationClient>();
+            services.AddTransient<IAdminUserApplicationFoundationClient, AdminUserApplicationFoundationClient>();
 
             services.AddTransient<IDispatcherRoutineFoundationClient, DispatcherRoutineFoundationClient>();
 
