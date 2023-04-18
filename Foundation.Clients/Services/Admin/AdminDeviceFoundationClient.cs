@@ -26,7 +26,7 @@ namespace Foundation.Clients.Services
 
         public async Task<DeviceDetailsViewModel> UpdateOwner(Guid deviceId, Guid ownerId)
         {
-            var response = await _client.PostAsJsonAsync(DEVICE_ORGANISATION_PATH.AppendPathSegments(deviceId, "owner"), new { OwnerId = ownerId });
+            var response = await _client.PutAsJsonAsync(DEVICE_PATH.AppendPathSegments(deviceId, "owner"), new { OwnerId = ownerId });
 
             response.EnsureSuccessStatusCode();
 
