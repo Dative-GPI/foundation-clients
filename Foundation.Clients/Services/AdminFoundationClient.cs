@@ -9,6 +9,7 @@ namespace Foundation.Clients.Services
 
         public IAdminDeviceFoundationClient Devices { get; }
         public IAdminDeviceTwinFoundationClient DeviceTwin { get; }
+        public IAdminOrganisationFoundationClient Organisations { get; }
         public IAdminDeviceOrganisationFoundationClient DeviceOrganisations { get; }
         public IAdminDeviceSourceFoundationClient DeviceSources { get; }
         public IAdminUserApplicationFoundationClient UserApplications { get; }
@@ -22,6 +23,7 @@ namespace Foundation.Clients.Services
             IAdminDeviceOrganisationFoundationClient deviceOrganisation,
             IAdminDeviceSourceFoundationClient deviceSource,
             IAdminDeviceTwinFoundationClient deviceTwin,
+            IAdminOrganisationFoundationClient organisation,
             IAdminPermissionFoundationClient permission,
             IAdminRoutineFoundationClient routines,
             IAdminRoutineExecutionFoundationClient routineExecutions,
@@ -33,6 +35,7 @@ namespace Foundation.Clients.Services
             DeviceOrganisations = deviceOrganisation;
             DeviceSources = deviceSource;
             DeviceTwin = deviceTwin;
+            Organisations = organisation;
             Permissions = permission;
             Routines = routines;
             RoutineExecutions = routineExecutions;
@@ -49,6 +52,7 @@ namespace Foundation.Clients.Services
             DeviceOrganisations.Init(root);
             DeviceSources.Init(root);
             DeviceTwin.Init(root);
+            Organisations.Init(root);
             Permissions.Init(root);
             Routines.Init(root);
             RoutineExecutions.Init(root);

@@ -10,10 +10,11 @@ namespace Foundation.Clients.Abstractions
         IAdminDeviceTwinFoundationClient DeviceTwin { get; }
         IAdminDeviceOrganisationFoundationClient DeviceOrganisations { get; }
         IAdminDeviceSourceFoundationClient DeviceSources { get; }
-        IAdminUserApplicationFoundationClient UserApplications { get; }
+        IAdminOrganisationFoundationClient Organisations { get; }
         IAdminPermissionFoundationClient Permissions { get; }
         IAdminSourceFoundationClient Sources { get; }
         IAdminRoutineFoundationClient Routines { get; }
         IAdminRoutineExecutionFoundationClient RoutineExecutions { get; }
+        IAdminUserApplicationFoundationClient UserApplications { get; }
     }
 }

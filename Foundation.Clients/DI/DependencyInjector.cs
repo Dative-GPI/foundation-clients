@@ -36,6 +36,7 @@ namespace Foundation.Clients.DI
             services.AddTransient<IAdminDeviceOrganisationFoundationClient, AdminDeviceOrganisationFoundationClient>();
             services.AddTransient<IAdminDeviceSourceFoundationClient, AdminDeviceSourceFoundationClient>();
             services.AddTransient<IAdminDeviceTwinFoundationClient, AdminDeviceTwinFoundationClient>();
+            services.AddTransient<IAdminOrganisationFoundationClient, AdminOrganisationFoundationClient>();
             services.AddTransient<IAdminPermissionFoundationClient, AdminPermissionFoundationClient>();
             services.AddTransient<IAdminRoutineFoundationClient, AdminRoutineFoundationClient>();
             services.AddTransient<IAdminRoutineExecutionFoundationClient, AdminRoutineExecutionFoundationClient>();
