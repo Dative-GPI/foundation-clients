@@ -13,8 +13,8 @@ namespace Foundation.Clients.ViewModels.Admin
         public int? ImageWidth { get; set; }
         public string Code { get; set; }
         public List<string> Tags { get; set; }
-        public DateTime LastMaintenance { get; set; }
-        public DateTime NextMaintenance { get; set; }
+        public DateTime? LastMaintenance { get; set; }
+        public DateTime? NextMaintenance { get; set; }
         public int OperatingHours { get; set; }
         public string SoftwareVersion { get; set; }
         public bool SoftwareUpToDate { get; set; }
