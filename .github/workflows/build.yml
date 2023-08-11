@@ -22,4 +22,4 @@ jobs:
       - name: Install dependencies
         run: |
           cd ${{matrix.folder}}
-          dotnet build --configuration Release --no-restore
+          dotnet build --configuration Release
