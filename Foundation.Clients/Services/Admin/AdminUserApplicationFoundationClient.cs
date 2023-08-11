@@ -43,5 +43,14 @@ namespace Foundation.Clients.Services
 
             return userApplications;
         }
+
+        public async Task<UserApplicationDetailsViewModel> GetCurrent()
+        {
+            Url url = USER_APPLICATIONS_PATH.AppendPathSegment("current");
+
+            var userApplication = await _client.GetFromJsonAsync<UserApplicationDetailsViewModel>(url.ToUri());
+
+            return userApplication;
+        }
     }
 }

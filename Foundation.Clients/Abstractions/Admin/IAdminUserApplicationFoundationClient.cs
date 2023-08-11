@@ -10,5 +10,6 @@ namespace Foundation.Clients.Abstractions.Admin
         void Init(IFoundationClient root);
         Task<UserApplicationDetailsViewModel> Get(Guid userApplicationId);
         Task<IEnumerable<UserApplicationInfosViewModel>> GetMany(UserApplicationFilter filter);
+        Task<UserApplicationDetailsViewModel> GetCurrent();
     }
 }

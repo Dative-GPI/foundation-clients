@@ -18,7 +18,7 @@ namespace Foundation.Clients.Services
         public const string ORGANISATION_PATH = "/api/admin/v1/organisations";
         public const string ORGANISATION_TYPE_PATH = "/api/admin/v1/organisation-types";
         public const string USER_APPLICATIONS_PATH = "api/admin/v1/users";
-        public const string CURRENT_PERMISSIONS_ADMIN_PATH = "api/admin/v1/permissions-admin/current";
+        public const string PERMISSIONS_ADMIN_PATH = "api/admin/v1/permissions-admin";
         public const string SOURCES_PATH = "api/admin/v1/sources";
         public const string ROUTINES_PATH = "api/admin/v1/routines";
     }

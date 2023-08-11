@@ -8,5 +8,6 @@ namespace Foundation.Clients.Abstractions.Admin
     {
         void Init(IFoundationClient root);
         Task<IEnumerable<PermissionAdminInfosViewModel>> GetMany();
+        Task<IEnumerable<PermissionAdminInfosViewModel>> GetCurrent();
     }
 }

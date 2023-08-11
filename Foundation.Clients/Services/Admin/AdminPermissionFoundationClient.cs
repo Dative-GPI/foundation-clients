@@ -28,7 +28,16 @@ namespace Foundation.Clients.Services
 
         public async Task<IEnumerable<PermissionAdminInfosViewModel>> GetMany()
         {
-            Url url = CURRENT_PERMISSIONS_ADMIN_PATH;
+            Url url = PERMISSIONS_ADMIN_PATH;
+
+            var adminPermissions = await _client.GetFromJsonAsync<List<PermissionAdminInfosViewModel>>(url.ToUri());
+
+            return adminPermissions;
+        }
+
+        public async Task<IEnumerable<PermissionAdminInfosViewModel>> GetCurrent()
+        {
+            Url url = PERMISSIONS_ADMIN_PATH.AppendPathSegment("current");
 
             var adminPermissions = await _client.GetFromJsonAsync<List<PermissionAdminInfosViewModel>>(url.ToUri());
 
