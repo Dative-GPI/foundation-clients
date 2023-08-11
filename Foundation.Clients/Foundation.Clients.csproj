@@ -17,10 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bones" Version="0.0.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Foundation.Domain.Shared\Foundation.Domain.Shared.csproj" />
+    <PackageReference Include="Foundation.Shared" Version="0.0.2" />
   </ItemGroup>
   
 </Project>

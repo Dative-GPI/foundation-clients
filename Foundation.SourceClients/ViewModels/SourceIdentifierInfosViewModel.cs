@@ -1,5 +1,6 @@
 using System;
-using Foundation.Domain.Shared;
+
+using Foundation.Shared;
 
 namespace Foundation.SourceClients.ViewModels
 {
