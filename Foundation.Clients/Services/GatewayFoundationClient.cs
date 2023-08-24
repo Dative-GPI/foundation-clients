@@ -1,6 +1,6 @@
 using Foundation.Clients.Abstractions;
 using Foundation.Clients.Abstractions.Gateway;
-using Foundation.Clients.Abstractions.Shell;
+using Foundation.Clients.Abstractions.Core;
 
 namespace Foundation.Clients.Services
 {

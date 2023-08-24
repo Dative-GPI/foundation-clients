@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Foundation.Clients.Abstractions;
-using Foundation.Clients.Abstractions.Shell;
+using Foundation.Clients.Abstractions.Core;
 using Foundation.Clients.Abstractions.Gateway;
 
 using Foundation.Clients.Services;
@@ -18,15 +18,15 @@ namespace Foundation.Clients.DI
             services.AddTransient<IFoundationClient, FoundationClient>();
 
             services.AddTransient<IAdminFoundationClient, AdminFoundationClient>();
-            services.AddTransient<IShellFoundationClient, ShellFoundationClient>();
+            services.AddTransient<ICoreFoundationClient, CoreFoundationClient>();
             services.AddTransient<IGatewayFoundationClient, GatewayFoundationClient>();
             services.AddTransient<IDispatcherFoundationClient, DispatcherFoundationClient>();
 
-            services.AddTransient<IShellModelFoundationClient, ShellModelFoundationClient>();
-            services.AddTransient<IShellDeviceFoundationClient, ShellDeviceFoundationClient>();
-            services.AddTransient<IShellOrganisationFoundationClient, ShellOrganisationFoundationClient>();
-            services.AddTransient<IShellUserOrganisationFoundationClient, ShellUserOrganisationFoundationClient>();
-            services.AddTransient<IShellPermissionFoundationClient, ShellPermissionFoundationClient>();
+            services.AddTransient<ICoreModelFoundationClient, CoreModelFoundationClient>();
+            services.AddTransient<ICoreDeviceFoundationClient, CoreDeviceFoundationClient>();
+            services.AddTransient<ICoreOrganisationFoundationClient, CoreOrganisationFoundationClient>();
+            services.AddTransient<ICoreUserOrganisationFoundationClient, CoreUserOrganisationFoundationClient>();
+            services.AddTransient<ICorePermissionFoundationClient, CorePermissionFoundationClient>();
 
             services.AddTransient<IGatewayUserFoundationClient, GatewayUserFoundationClient>();
             services.AddTransient<IGatewayAccountFoundationClient, GatewayAccountFoundationClient>();

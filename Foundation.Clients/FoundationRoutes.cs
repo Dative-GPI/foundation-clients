@@ -1,6 +1,6 @@
 namespace Foundation.Clients.Services
 {
-    public static class ShellFoundationRoutes
+    public static class CoreFoundationRoutes
     {
         public const string MODELS_PATH = "api/v1/models";
         public const string DEVICE_ORGANISATIONS_PATH = "api/v1/devices";
