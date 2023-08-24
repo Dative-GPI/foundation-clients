@@ -21,7 +21,7 @@ namespace Foundation.Clients.Services
         private FoundationClient _root;
         private ILogger<CoreModelFoundationClient> _logger;
 
-        private HttpClient _client => _root.CoreClient;
+        private HttpClient _client => _root.FoundationHttpClient;
 
         public CoreModelFoundationClient(ILogger<CoreModelFoundationClient> logger)
         {

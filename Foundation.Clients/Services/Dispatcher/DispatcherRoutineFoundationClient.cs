@@ -18,7 +18,7 @@ namespace Foundation.Clients.Services
     {
         private FoundationClient _root;
 
-        private HttpClient _client => _root.DispatcherClient;
+        private HttpClient _client => _root.FoundationHttpClient;
 
 
         public void Init(IFoundationClient root)

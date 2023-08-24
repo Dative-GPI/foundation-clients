@@ -21,7 +21,7 @@ namespace Foundation.Clients.Services
         private FoundationClient _root;
         private ILogger<GatewayTranslationFoundationClient> _logger;
 
-        private HttpClient _client => _root.GatewayClient;
+        private HttpClient _client => _root.FoundationHttpClient;
 
         public GatewayTranslationFoundationClient(ILogger<GatewayTranslationFoundationClient> logger)
         {

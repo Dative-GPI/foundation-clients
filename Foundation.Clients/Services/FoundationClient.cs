@@ -7,10 +7,7 @@ namespace Foundation.Clients.Services
 {
     public class FoundationClient : IFoundationClient
     {
-        public HttpClient AdminClient { get; }
-        public HttpClient CoreClient { get; }
-        public HttpClient GatewayClient { get; }
-        public HttpClient DispatcherClient { get; }
+        public HttpClient FoundationHttpClient { get; }
 
         public IAdminFoundationClient Admin { get; }
         public ICoreFoundationClient Core { get; }
@@ -18,48 +15,33 @@ namespace Foundation.Clients.Services
         public IDispatcherFoundationClient Dispatcher { get; }
 
         public FoundationClient(
-            HttpClient adminClient,
-            HttpClient shellClient,
-            HttpClient gatewayClient,
-            HttpClient dispatcherClient,
+            HttpClient httpClient,
             IAdminFoundationClient adminFoundationClient,
-            ICoreFoundationClient shellFoundationClient,
+            ICoreFoundationClient coreFoundationClient,
             IGatewayFoundationClient gatewayFoundationClient,
             IDispatcherFoundationClient dispatcherFoundationClient
         )
         {
-            AdminClient = adminClient;
-            CoreClient = shellClient;
-            GatewayClient = gatewayClient;
-            DispatcherClient = dispatcherClient;
+            FoundationHttpClient = httpClient;
 
             Admin = adminFoundationClient;
-            Core = shellFoundationClient;
+            Core = coreFoundationClient;
             Gateway = gatewayFoundationClient;
             Dispatcher = dispatcherFoundationClient;
         }
 
-        public void Init(string adminHost, string shellHost, string languageCode, string jwt = null)
+        public void Init(string host, string languageCode, string jwt = null)
         {
-            AdminClient.BaseAddress = new Uri($"https://{adminHost}");
-            CoreClient.BaseAddress = new Uri($"https://{shellHost}");
-            GatewayClient.BaseAddress = new Uri($"https://{shellHost}");
-            DispatcherClient.BaseAddress = new Uri($"https://{adminHost}");
-
+            FoundationHttpClient.BaseAddress = new Uri($"https://{host}");
+            
             if (!String.IsNullOrWhiteSpace(jwt))
             {
-                CoreClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwt}");
-                GatewayClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwt}");
-                AdminClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwt}");
-                DispatcherClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwt}");
+                FoundationHttpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwt}");
             }
 
             if (!String.IsNullOrEmpty(languageCode))
             {
-                AdminClient.DefaultRequestHeaders.Add("Accept-Language", languageCode);
-                CoreClient.DefaultRequestHeaders.Add("Accept-Language", languageCode);
-                GatewayClient.DefaultRequestHeaders.Add("Accept-Language", languageCode);
-                DispatcherClient.DefaultRequestHeaders.Add("Accept-Language", languageCode);
+                FoundationHttpClient.DefaultRequestHeaders.Add("Accept-Language", languageCode);
             }
 
             Admin.Init(this);

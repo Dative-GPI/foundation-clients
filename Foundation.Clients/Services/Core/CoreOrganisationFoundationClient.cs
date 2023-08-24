@@ -22,7 +22,7 @@ namespace Foundation.Clients.Services
         private FoundationClient _root;
         private ILogger<CoreOrganisationFoundationClient> _logger;
 
-        private HttpClient _client => _root.CoreClient;
+        private HttpClient _client => _root.FoundationHttpClient;
 
         public CoreOrganisationFoundationClient(ILogger<CoreOrganisationFoundationClient> logger)
         {

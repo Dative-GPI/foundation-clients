@@ -20,7 +20,7 @@ namespace Foundation.Clients.Services
     {
         private FoundationClient _root;
 
-        private HttpClient _client => _root.AdminClient;
+        private HttpClient _client => _root.FoundationHttpClient;
         
 
         public async Task<DeviceTwinViewModel> Get(Guid deviceId)

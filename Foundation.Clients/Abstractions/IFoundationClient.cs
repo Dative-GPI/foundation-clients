@@ -2,7 +2,7 @@ namespace Foundation.Clients.Abstractions
 {
     public interface IFoundationClient
     {
-        void Init(string adminHost, string shellHost, string languageCode, string jwt = null);
+        void Init(string host, string languageCode, string jwt = null);
         IAdminFoundationClient Admin { get; }
         ICoreFoundationClient Core { get; }
         IGatewayFoundationClient Gateway { get; }

@@ -21,7 +21,7 @@ namespace Foundation.Clients.Services
         private FoundationClient _root;
         private ILogger<GatewayAccountFoundationClient> _logger;
 
-        private HttpClient _client => _root.GatewayClient;
+        private HttpClient _client => _root.FoundationHttpClient;
 
         public GatewayAccountFoundationClient(ILogger<GatewayAccountFoundationClient> logger)
         {
