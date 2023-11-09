@@ -43,10 +43,10 @@ namespace Foundation.SourceClients.Services
                 token, _client.BaseAddress + ACCOUNT_PATH
             );
 
-            var response = await _client.PostAsJsonAsync(ACCOUNT_PATH, new { Token = token, MachineId = machineId });
+            var response = await _client.PostAsJsonAsync(ACCOUNT_PATH, new { Token = token, MachineId = machineId }, cancellationToken: ct);
             response.EnsureSuccessStatusCode();
 
-            var payload = await response.Content.ReadFromJsonAsync<CredentialPayload>();
+            var payload = await response.Content.ReadFromJsonAsync<CredentialPayload>(cancellationToken: ct);
             var secret = Convert.FromBase64String(payload.Secret);
 
             var certificate = new X509Certificate2(secret);
@@ -134,6 +134,24 @@ namespace Foundation.SourceClients.Services
             var token = Encoding.UTF8.GetString(buffer.Slice(0, response.Count).ToArray());
 
             return token;
+        }
+
+        public async Task<X509Certificate2> RenewCertificate(CancellationToken ct)
+        {
+            _logger.LogInformation(
+                "Renewing credential on {uri}",
+                _client.BaseAddress + RENEW_PATH
+            );
+
+            var response = await _client.PostAsJsonAsync(RENEW_PATH, ct);
+            response.EnsureSuccessStatusCode();
+
+            var payload = await response.Content.ReadFromJsonAsync<CredentialPayload>(cancellationToken: ct);
+            var secret = Convert.FromBase64String(payload.Secret);
+
+            var certificate = new X509Certificate2(secret);
+
+            return certificate;
         }
     }
 
