@@ -10,5 +10,6 @@ namespace Foundation.SourceClients.Abstractions
         
         Task<X509Certificate2> Create(string token, string machineId = null, CancellationToken ct = default(CancellationToken));
         Task<string> Login(X509Certificate2 certificate, CancellationToken ct);
+        Task<X509Certificate2> RenewCertificate(CancellationToken ct);
     }
 }
