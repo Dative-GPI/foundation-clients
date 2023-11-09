@@ -143,7 +143,7 @@ namespace Foundation.SourceClients.Services
                 _client.BaseAddress + RENEW_PATH
             );
 
-            var response = await _client.PostAsJsonAsync(RENEW_PATH, ct);
+            var response = await _client.PostAsync(RENEW_PATH, null, cancellationToken: ct);
             response.EnsureSuccessStatusCode();
 
             var payload = await response.Content.ReadFromJsonAsync<CredentialPayload>(cancellationToken: ct);
