@@ -6,6 +6,7 @@ namespace Foundation.Clients.ViewModels.Admin
     {
         public Guid Id { get; set; }
         public Guid DeviceId { get; set; }
+        public Guid SourceId { get; set; }
         public string DeviceCode { get; set; }
         public Guid? DeviceOwnerId { get; set; }
         public string DeviceOwnerLabel { get; set; }
